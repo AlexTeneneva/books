@@ -80,8 +80,8 @@
             <a class="logo" href="/">
               <strong>EPIC BOOKS</strong>
             </a>
-            <nav class="main-nav page-header__nav" id="nav">
-              <button class="burger main-nav__toggler" aria-label="Показать главное меню">
+            <nav class="main-nav main-nav--open page-header__nav" id="nav">
+              <button class="burger main-nav__toggler burger--close" id='burger--close' aria-label="Показать главное меню">
                 <span>Показать главное меню</span>
               </button>
               <!-- Дописать класс main-nav--open на узел с классом main-nav для раскрытия меню на мобилке. Дописать класс burger--close на узел с классом burger для преобразования в крестик-->
@@ -647,6 +647,7 @@
     <script src="js/choices.min.js"></script>
     <script src="js/nouislider.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="../books/data.js"></script>
     <div class="modal__backdrop"></div>
   </body>
 </html>

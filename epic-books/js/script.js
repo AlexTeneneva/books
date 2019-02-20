@@ -2,6 +2,12 @@ ready(function(){
 
   // В этом месте должен быть написан ваш код
 
+let toggler = document.getElementsByClassName('burger');
+toggler.addEventListener('click', mainNavVisibleToggle);
+function mainNavVisibleToggle(e) {
+  e.preventDefault();
+  toggler.classList.toggle('burger--close');
+document.getElementsByClassName('main-nav').classList.toggle('main-nav--open');
 
 
   // ВНИМАНИЕ!
