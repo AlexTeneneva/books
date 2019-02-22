@@ -9,7 +9,17 @@ ready(function(){
 //   toggler.classList.toggle('burger--close');
 // document.getElementsByClassName('main-nav').classList.toggle('main-nav--open');
 
+const burger = document.querySelector('.burger');
+const mainNav = document.querySelector('.main-nav');
+burger.addEventListener('click', function(){
+  mainNav.classList.toggle('main-nav--open')
+  burger.classList.toggle('burger--close')
+});
 
+const filter = document.querySelector('.filters');
+filter.addEventListener('click', function() {
+  filter.classList.toggle('filters--open')
+});
 
   // ВНИМАНИЕ!
   // Нижеследующий код (кастомный селект и выбор диапазона цены) работает
