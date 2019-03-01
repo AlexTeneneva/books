@@ -21,6 +21,21 @@ filter.addEventListener('click', function() {
   filter.classList.toggle('filters--open')
 });
 
+const fragment = document.createDocumentFragment(); 
+const template = document.querySelector('#book__card'); 
+
+for (i=0; i<10; i++) { 
+const newBook = template.content.cloneNode(true); 
+
+newBook.querySelector('.card__title').innerHTML = books[i].name; 
+newBook.querySelector('.card__price').innerHTML = books[i].price; 
+newBook.querySelector('.card__img').src = 'img/' + books[i].url + '.jpg'; 
+
+fragment.appendChild(newBook); 
+}; 
+
+document.querySelector('.catalog__books-list').appendChild(fragment);
+
 
   // ВНИМАНИЕ!
   // Нижеследующий код (кастомный селект и выбор диапазона цены) работает
