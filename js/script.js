@@ -16,8 +16,9 @@ burger.addEventListener('click', function(){
   burger.classList.toggle('burger--close')
 });
 
+const filterBtn = document.querySelector('.filters__trigger');
 const filter = document.querySelector('.filters');
-filter.addEventListener('click', function() {
+filterBtn.addEventListener('click', function() {
   filter.classList.toggle('filters--open')
 });
 
