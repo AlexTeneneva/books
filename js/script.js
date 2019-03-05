@@ -39,7 +39,7 @@ document.querySelector('.catalog__books-list').appendChild(fragment);
 
 // const modalBtn = document.querySelector('modal__close');
 // const modal = document.querySelector('modal');
-// newBook.addEventListener('click', function () {
+// modalBtn.addEventListener('click', function () {
 // modal.classList.toggle('modal--open')
 // });
 
