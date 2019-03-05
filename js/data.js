@@ -1,6 +1,7 @@
 const books = [
   {
     "name":"Клиенты на всю жизнь",
+    "author": ""
     "desc":"",
     "price":697,
     "uri":"klienty-na-vsyu-zhizn",
@@ -8,6 +9,7 @@ const books = [
   },
   {
     "name":"Ценные решения",
+    "author": "Девид Огилви"
     "desc":"Как работать с ценами, чтобы прибыль росла",
     "price":637,
     "uri":"tsennye-resheniya",
@@ -15,6 +17,7 @@ const books = [
   },
   {
     "name":"45 татуировок продавана",
+    "author": "Девид Огилви"
     "desc":"Правила для тех, кто продаёт и управляет продажами",
     "price":676,
     "uri":"45-tatuirovok-prodavana",
@@ -22,6 +25,7 @@ const books = [
   },
   {
     "name":"Дневник художника-натуралиста",
+    "author": "Девид Огилви"
     "desc":"Как рисовать животных, птиц, растения и пейзажи",
     "price":1695,
     "uri":"dnevnik-khudozhnika-naturalista",
@@ -29,6 +33,7 @@ const books = [
   },
   {
     "name":"Открытое мышление",
+    "author": "Девид Огилви"
     "desc":"Как выйти за пределы своей точки зрения",
     "price":625,
     "uri":"otkrytoe-myshlenie",
@@ -36,6 +41,7 @@ const books = [
   },
   {
     "name":"Не делай это",
+    "author": "Девид Огилви"
     "desc":"Тайм-менеджмент для творческих людей",
     "price":855,
     "uri":"ne-delay-eto",
@@ -43,6 +49,7 @@ const books = [
   },
   {
     "name":"Я хочу больше идей!",
+    "author": "Девид Огилви"
     "desc":"Более 100 техник и упражнений для развития творческого мышления",
     "price":667,
     "uri":"ya-khochu-bolshe-idey",
@@ -50,6 +57,7 @@ const books = [
   },
   {
     "name":"Urban Jungle",
+    "author": "Девид Огилви"
     "desc":"Как создать уютный интерьер с помощью растений",
     "price":807,
     "uri":"urban-jungle",
@@ -57,6 +65,7 @@ const books = [
   },
   {
     "name":"На крючке",
+    "author": "Девид Огилви"
     "desc":"Как создавать продукты, формирующие привычки",
     "price":595,
     "uri":"na-kryuchke",
@@ -64,6 +73,7 @@ const books = [
   },
   {
     "name":"Вместе быстрее",
+    "author": "Девид Огилви"
     "desc":"12 принципов командной эффективности",
     "price":1025,
     "uri":"vmeste-bystree",
