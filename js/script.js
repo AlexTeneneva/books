@@ -37,22 +37,24 @@ fragment.appendChild(newBook);
 document.querySelector('.catalog__books-list').appendChild(fragment);
 
 
-// const modalBtn = document.querySelector('modal__close');
-// const modal = document.querySelector('modal');
-// modalBtn.addEventListener('click', function () {
-// modal.classList.toggle('modal--open')
-// });
+const modalBtn = document.querySelector('modal__close');
+const modal = document.querySelector('modal');
+// const HTML = document.querySelector('html');
+template.addEventListener('click', function () {
+document.querySelector('html').classList.add('js-modal-open')
+modal.classList.toggle('modal--open')
+});
 
 
-// const modalFragment = document.createDocumentFragment();
-// const modalTemplate = document.querySelector('#modal__card');
-// const modalCard = modalTemplate.content.cloneNode(true);
+const modalFragment = document.createDocumentFragment();
+const modalTemplate = document.querySelector('#modal__card');
+const modalCard = modalTemplate.content.cloneNode(true);
 
-// modalCard.querySelector('product__title').innerHTML = books[i].name;
-// modalCard.querySelector('btn--price').innerHTML = books[i].price + " ₽"; 
-// modalCard.querySelector('product__img').src = 'img/' + books[i].uri + '.jpg';
-// modalCard.querySelector('product__img').alt =  books[i].name;
-// modalCard.querySelector('product__author').innerHTML = books[i].author;
+modalCard.querySelector('product__title').innerHTML = books[i].name;
+modalCard.querySelector('btn--price').innerHTML = books[i].price + " ₽"; 
+modalCard.querySelector('product__img').src = 'img/' + books[i].uri + '.jpg';
+modalCard.querySelector('product__img').alt =  books[i].name;
+modalCard.querySelector('product__author').innerHTML = books[i].author;
 
 
 
