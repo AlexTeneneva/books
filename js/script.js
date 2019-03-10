@@ -26,38 +26,72 @@ const fragment = document.createDocumentFragment();
 const template = document.querySelector('#book__card'); 
 
 for (i=0; i<10; i++) { 
-const newBook = template.content.cloneNode(true); 
-newBook.querySelector('.card__title').innerHTML = books[i].name; 
-newBook.querySelector('.card__price').innerHTML = books[i].price + " ₽"; 
-newBook.querySelector('.card__img').src = 'img/' + books[i].uri + '.jpg'; 
-newBook.querySelector('.card__img').alt = books[i].name;
-fragment.appendChild(newBook); 
+  const newBook = template.content.cloneNode(true); 
+  newBook.querySelector('.card__title').innerHTML = books[i].name; 
+  newBook.querySelector('.card__price').innerHTML = books[i].price + " ₽"; 
+  newBook.querySelector('.card__img').src = 'img/' + books[i].uri + '.jpg'; 
+  newBook.querySelector('.card__img').alt = books[i].name;
+  newBook.querySelector('.card__inner').href = '#' + books[i].uri; 
+  newBook.querySelector('.card__inner').dataset.id = books[i].uri; 
+  fragment.appendChild(newBook); 
 }; 
 
 document.querySelector('.catalog__books-list').appendChild(fragment);
 
 
-const modalBtn = document.querySelector('modal__close');
-const modal = document.querySelector('modal');
-// const HTML = document.querySelector('html');
-template.addEventListener('click', function () {
-document.querySelector('html').classList.add('js-modal-open')
-modal.classList.toggle('modal--open')
-});
+  const modalBtn = document.querySelector('.modal__close');
+  // const modal = document.querySelector('.modal');
+  // const HTML = document.querySelector('html');
+  document.querySelector('.catalog__books-list').addEventListener('click', function (e) {
+    e.preventDefault();
+    let target = e.target;
+    while (target !== this) {
+      if (target.className == 'card__inner'){
+        // console.log('click on link', target.dataset.id) 
+        // обойти массив букс в поисках нужной книги по target.dataset.id
+        for (let i=0; i < books.length; i++) {
+          if (books[i].uri == target.dataset.id) {
+            const modalFragment = document.createDocumentFragment();
+            const modalTemplate = document.querySelector('#modal__card');
+            const modalCard = modalTemplate.content.cloneNode(true);
+
+            modalCard.querySelector('.product__title').innerHTML = books[i].name;
+            modalCard.querySelector('.btn--price').innerHTML = books[i].price + " ₽"; 
+            modalCard.querySelector('.product__img').src = 'img/' + books[i].uri + '.jpg';
+            modalCard.querySelector('.product__img').alt =  books[i].name;
+            modalCard.querySelector('.product__author').innerHTML = books[i].author;
+
+            document.querySelector('.page__content').appendChild(modalFragment);
+            document.querySelector('html').classList.add('js-modal-open');
+            document.querySelector('.modal').classList.add('modal--open');
+            break;
+          }
+
+        };
+        // сформировать разметку попапа и показать его
+        return;
+      }
+      target = target.parentNode;
+    }
+    // console.log(e.target.classList.contain('card__inner'));
+
+    // document.querySelector('html').classList.add('js-modal-open')
+    // modal.classList.toggle('modal--open')
+
+    // const modalFragment = document.createDocumentFragment();
+    // const modalTemplate = document.querySelector('#modal__card');
+    // const modalCard = modalTemplate.content.cloneNode(true);
+
+    // modalCard.querySelector('.product__title').innerHTML = books[i].name;
+    // modalCard.querySelector('.btn--price').innerHTML = books[i].price + " ₽"; 
+    // modalCard.querySelector('.product__img').src = 'img/' + books[i].uri + '.jpg';
+    // modalCard.querySelector('.product__img').alt =  books[i].name;
+    // modalCard.querySelector('.product__author').innerHTML = books[i].author;
+
+  });
 
 
-const modalFragment = document.createDocumentFragment();
-const modalTemplate = document.querySelector('#modal__card');
-const modalCard = modalTemplate.content.cloneNode(true);
 
-modalCard.querySelector('.product__title').innerHTML = books[i].name;
-modalCard.querySelector('.btn--price').innerHTML = books[i].price + " ₽"; 
-modalCard.querySelector('.product__img').src = 'img/' + books[i].uri + '.jpg';
-modalCard.querySelector('.product__img').alt =  books[i].name;
-modalCard.querySelector('.product__author').innerHTML = books[i].author;
-
-
-я
   // ВНИМАНИЕ!
   // Нижеследующий код (кастомный селект и выбор диапазона цены) работает
   // корректно и не вызывает ошибок в консоли браузера только на главной.
