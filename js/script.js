@@ -57,7 +57,7 @@ modalCard.querySelector('.product__img').alt =  books[i].name;
 modalCard.querySelector('.product__author').innerHTML = books[i].author;
 
 
-
+я
   // ВНИМАНИЕ!
   // Нижеследующий код (кастомный селект и выбор диапазона цены) работает
   // корректно и не вызывает ошибок в консоли браузера только на главной.
