@@ -22,7 +22,7 @@ filterBtn.addEventListener('click', function() {
 const fragment = document.createDocumentFragment(); 
 const bookCard = document.querySelector('.card'); 
 
-for (i=0; i<10; i++) { 
+for (i=0; i<9; i++) { 
   const newBook = bookCard.cloneNode(true); 
   newBook.querySelector('.card__title').innerHTML = books[i].name; 
   newBook.querySelector('.card__price').innerHTML = books[i].price + " ₽"; 
@@ -37,45 +37,48 @@ document.querySelector('.catalog__books-list').appendChild(fragment);
 
 
 //Modal
-  const closeBtnPopup = document.querySelector(".modal__close");
-  const closePopupAround = document.querySelector(".modal");
-  const page = document.querySelector(".page"); 
-  const cardLink = document.querySelectorAll(".catalog__books-list");
-  const modal = document.getElementById("modal-book-view");
+    // Версия 1///
 
-  for (let i = 0; i < books.length; i++) {
-    cardLink[i].addEventListener('click', openModal)
-  };
+  // const closeBtnPopup = document.querySelector(".modal__close");
+  // const closePopupAround = document.querySelector(".modal");
+  // const page = document.querySelector(".page"); 
+  // const cardLink = document.querySelectorAll(".catalog__books-list");
+  // const modal = document.getElementById("modal-book-view");
 
-  closePopupAround.addEventListener('click',function(e) {
-    if (e.target === closePopupAround) {
-      closeModal();
-    }
-  });
-  closeBtnPopup.addEventListener('click', closeModal);
+  // for (let i = 0; i < books.length; i++) {
+  //   cardLink[i].addEventListener('click', openModal)
+  //   break
+  // };
 
-  function openModal() {
-    page.classList.toggle("js-modal-open");
-    modal.classList.toggle("modal--open");
+  // closePopupAround.addEventListener('click',function(e) {
+  //   if (e.target === closePopupAround) {
+  //     closeModal();
+  //   }
+  // });
+  // closeBtnPopup.addEventListener('click', closeModal);
+
+  // function openModal() {
+  //   page.classList.toggle("js-modal-open");
+  //   modal.classList.toggle("modal--open");
     
-    const modalFragment = document.createDocumentFragment();
-    const modalCard = document.querySelector('.card').cloneNode(true);
+  //   const modalFragment = document.createDocumentFragment();
+  //   const modalCard = document.querySelector('.card').cloneNode(true);
 
-    modalCard.querySelector('.product__title').innerHTML = books[i].name;
-    modalCard.querySelector('.btn--price').innerHTML = books[i].price + " ₽"; 
-    modalCard.querySelector('.product__img').src = 'img/' + books[i].uri + '.jpg';
-    modalCard.querySelector('.product__img').alt =  books[i].name;
-    modalCard.querySelector('.product__author').innerHTML = books[i].author;
+  //   modalCard.querySelector('.product__title').innerHTML = books[i].name;
+  //   modalCard.querySelector('.btn--price').innerHTML = books[i].price + " ₽"; 
+  //   modalCard.querySelector('.product__img').src = 'img/' + books[i].uri + '.jpg';
+  //   modalCard.querySelector('.product__img').alt =  books[i].name;
+  //   modalCard.querySelector('.product__author').innerHTML = books[i].author;
 
-    document.querySelector('.page__content').appendChild(modalFragment);
+  //   document.querySelector('.page__content').appendChild(modalFragment);
 
-  };
+  // };
 
-  function closeModal() {
-    page.classList.remove("js-modal-open");
-    modal.classList.remove("modal--open");
-  };
-  });
+  // function closeModal() {
+  //   page.classList.remove("js-modal-open");
+  //   modal.classList.remove("modal--open");
+  // };
+  // });
 
 
 
@@ -87,8 +90,10 @@ document.querySelector('.catalog__books-list').appendChild(fragment);
   //   let target = e.target;
   //   while (target !== this) {
   //     if (target.className == 'card__inner'){
-  //       // console.log('click on link', target.dataset.id) 
+        
+        // console.log('click on link', target.dataset.id) 
   //       // обойти массив букс в поисках нужной книги по target.dataset.id
+  //       // сформировать разметку попапа и показать его
   //       for (let i=0; i < books.length; i++) {
   //         if (books[i].uri == target.dataset.id) {
   //           const modalFragment = document.createDocumentFragment();
@@ -108,7 +113,6 @@ document.querySelector('.catalog__books-list').appendChild(fragment);
   //         }
 
   //       };
-  //       // сформировать разметку попапа и показать его
   //       return;
   //     }
   //     target = target.parentNode;
@@ -174,3 +178,4 @@ function ready (fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
+ });
