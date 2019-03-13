@@ -1,39 +1,37 @@
 ready(function(){
 
-  // В этом месте должен быть написан ваш код
-
 //Burger and filter
-const burger = document.querySelector('.burger');
-const mainNav = document.querySelector('.main-nav');
-burger.addEventListener('click', function(){
-  mainNav.classList.toggle('main-nav--open')
-  burger.classList.toggle('burger--close')
-});
+  const burger = document.querySelector('.burger');
+  const mainNav = document.querySelector('.main-nav');
+  burger.addEventListener('click', function(){
+    mainNav.classList.toggle('main-nav--open')
+    burger.classList.toggle('burger--close')
+  });
 
-const filterBtn = document.querySelector('.filters__trigger');
-const filter = document.querySelector('.filters');
-filterBtn.addEventListener('click', function() {
-  filter.classList.toggle('filters--open')
-});
+  const filterBtn = document.querySelector('.filters__trigger');
+  const filter = document.querySelector('.filters');
+  filterBtn.addEventListener('click', function() {
+    filter.classList.toggle('filters--open')
+  });
 
 
-// card render
+  // card render
 
-const fragment = document.createDocumentFragment(); 
-const bookCard = document.querySelector('.card'); 
+  const fragment = document.createDocumentFragment(); 
+  const bookCard = document.querySelector('.card'); 
 
-for (i=0; i<9; i++) { 
-  const newBook = bookCard.cloneNode(true); 
-  newBook.querySelector('.card__title').innerHTML = books[i].name; 
-  newBook.querySelector('.card__price').innerHTML = books[i].price + " ₽"; 
-  newBook.querySelector('.card__img').src = 'img/' + books[i].uri + '.jpg'; 
-  newBook.querySelector('.card__img').alt = books[i].name;
-  newBook.querySelector('.card__inner').href = '#' + books[i].uri; 
-  newBook.querySelector('.card__inner').dataset.id = books[i].uri; 
-  fragment.appendChild(newBook); 
-}; 
+  for (i=0; i<9; i++) { 
+    const newBook = bookCard.cloneNode(true); 
+    newBook.querySelector('.card__title').innerHTML = books[i].name; 
+    newBook.querySelector('.card__price').innerHTML = books[i].price + " ₽"; 
+    newBook.querySelector('.card__img').src = 'img/' + books[i].uri + '.jpg'; 
+    newBook.querySelector('.card__img').alt = books[i].name;
+    newBook.querySelector('.card__inner').href = '#' + books[i].uri; 
+    newBook.querySelector('.card__inner').dataset.id = books[i].uri; 
+    fragment.appendChild(newBook); 
+  }; 
 
-document.querySelector('.catalog__books-list').appendChild(fragment);
+  document.querySelector('.catalog__books-list').appendChild(fragment);
 
 
 //Modal
@@ -90,7 +88,7 @@ document.querySelector('.catalog__books-list').appendChild(fragment);
   //   let target = e.target;
   //   while (target !== this) {
   //     if (target.className == 'card__inner'){
-        
+
         // console.log('click on link', target.dataset.id) 
   //       // обойти массив букс в поисках нужной книги по target.dataset.id
   //       // сформировать разметку попапа и показать его
@@ -169,7 +167,7 @@ document.querySelector('.catalog__books-list').appendChild(fragment);
       'max': 2000
     }
   });
-
+ });
 
 function ready (fn) {
   if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading'){
@@ -178,4 +176,3 @@ function ready (fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
- });
