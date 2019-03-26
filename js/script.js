@@ -35,6 +35,50 @@ ready(function(){
 
 
 //Modal
+
+  const closeBtnPopup = document.querySelector(".modal__close");
+  const closePopupAround = document.querySelector(".modal");
+  const page = document.querySelector(".page"); 
+  const cardLink = document.querySelectorAll(".catalog__books-list");
+  const modal = document.getElementById("modal-book-view");
+
+  for (let i = 0; i < books.length; i++) {
+    cardLink[i].addEventListener('click', openModal)
+    break
+  };
+
+  closePopupAround.addEventListener('click',function(e) {
+    if (e.target === closePopupAround) {
+      closeModal();
+    }
+  });
+  closeBtnPopup.addEventListener('click', closeModal);
+
+  function openModal() {
+    page.classList.toggle("js-modal-open");
+    modal.classList.toggle("modal--open");
+    
+    var url_cash = window.location.hash;
+  for (let i = 0; i < books.length; i++) { 
+    if (books[i].uri == url_cash.slice(1)) {
+    document.getElementsByClassName('product__title')[0].innerHTML = books[i].name;
+    document.getElementsByClassName('product__author')[0].innerHTML = books[i].author;
+    document.getElementsByClassName('product__subtitle')[0].innerHTML = books[i].desc;
+    document.getElementsByClassName('btn--price')[0].innerHTML = books[i].price + " ₽";
+    document.getElementsByClassName('product__img').src = 'img/' + books[i].uri + '.jpg';
+    document.getElementsByClassName('product__img').alt =  books[i].name;
+    break;
+    } 
+  } 
+
+  };
+
+  function closeModal() {
+    page.classList.remove("js-modal-open");
+    modal.classList.remove("modal--open");
+  };
+  // });
+
     // Версия 1///
 
   // const closeBtnPopup = document.querySelector(".modal__close");
