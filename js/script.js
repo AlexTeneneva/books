@@ -20,7 +20,7 @@ ready(function(){
   const fragment = document.createDocumentFragment(); 
   const bookCard = document.querySelector('.card'); 
 
-  for (i=0; i<9; i++) { 
+  for (i=0; i<12; i++) { 
     const newBook = bookCard.cloneNode(true); 
     newBook.querySelector('.card__title').innerHTML = books[i].name; 
     newBook.querySelector('.card__price').innerHTML = books[i].price + " ₽"; 
