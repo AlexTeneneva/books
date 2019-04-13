@@ -1,12 +1,12 @@
 const books = [
-  // {
-  //   "name":"Клиенты на всю жизнь",
-  //   "author": "Девид Огилви",
-  //   "desc":"",
-  //   "price":697,
-  //   "uri":"klienty-na-vsyu-zhizn",
-  //   "type":"marketing"
-  // },
+  {
+    "name":"Клиенты на всю жизнь",
+    "author": "Девид Огилви",
+    "desc":"",
+    "price":697,
+    "uri":"klienty-na-vsyu-zhizn",
+    "type":"marketing"
+  },
   {
     "name":"Ценные решения",
     "author": "Девид Огилви",
