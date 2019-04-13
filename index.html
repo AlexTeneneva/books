@@ -274,8 +274,8 @@
           <div class="catalog__inner">
             <h1 class="catalog__title">Каталог книг</h1>
             <div class="catalog__books-list">
-              <template id = "book__card">
-              <article class="card">
+              <!-- <template id = "book__card"> -->
+         <!--      <article class="card">
                 <a class="card__inner" href="index.html#klienty-na-vsyu-zhizn">
                   <img class="card__img" src="img/klienty-na-vsyu-zhizn.jpg" width="148" height="208" alt="Клиенты на всю жизнь"/>
                   <h2 class="card__title">Клиенты на всю жизнь</h2>
@@ -288,8 +288,8 @@
                   </svg>
                   <span>В корзину</span>
                 </button>
-              </article>
-              </template>
+              </article> -->
+              <!-- </template> -->
             </div>
             <div class="pagination" aria-label="Page navigation">
               <a class="pagination__item  pagination__item--arrow-left" href="/0">
@@ -437,7 +437,9 @@
           </div>
         </section>
         <!-- Дописать modal--open для показа именного этого модального окна (плюс дописать на html класс js-modal-open)-->
-        <template id = "modal__card">
+
+ <!--        <template id="modal__card"> -->
+
         <div class="modal" id="modal-book-view" tabindex="-1" role="dialog">
           <div class="modal__dialog" role="document">
             <div class="modal__content">
@@ -448,7 +450,7 @@
               </button>
               <div class="product">
                 <div class="product__img-wrap">
-                  <img src="img/iskrenniy-servis.jpg" alt="Искренний сервис" width="422" height="594">
+                  <img class = "product__img" src="img/iskrenniy-servis.jpg" alt="Искренний сервис" width="422" height="594">
                 </div>
                 <div class="product__text-info">
                   <h2 class="product__title">Искренний сервис</h2>
@@ -477,7 +479,7 @@
                     <tr>
                       <th>Автор:</th>
                       <td>
-                        <a href="">Девид Огилви</a>
+                        <a class = 'product__author' href="">Девид Огилви</a>
                       </td>
                     </tr>
                     <tr>
@@ -509,7 +511,11 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         </template>
+=======
+      <!--   </template> -->
+>>>>>>> modal
       </div>
       <div class="page__footer-wrapper">
         <footer class="page-footer" role="contentinfo">
